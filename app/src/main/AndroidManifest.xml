@@ -13,9 +13,6 @@
             android:name=".DENActivity"
             android:exported="false" />
         <activity
-            android:name=".UserActivity"
-            android:exported="false" />
-        <activity
             android:name=".ContactActivity"
             android:exported="false" />
         <activity
