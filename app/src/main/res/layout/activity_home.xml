@@ -31,14 +31,14 @@
         android:textStyle="bold" />
 
     <ImageView
-        android:id="@+id/barra_menu"
+        android:id="@+id/logout"
         android:layout_width="63dp"
         android:layout_height="60dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginEnd="11dp"
         android:layout_marginBottom="652dp"
-        android:src="@drawable/menu_lines_hamburger_icon" />
+        android:src="@drawable/ic_logout_foreground" />
 
     <GridLayout
         android:layout_width="match_parent"

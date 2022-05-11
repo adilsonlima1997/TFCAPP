@@ -10,7 +10,7 @@ import android.widget.Toast;
 
 public class HomeActivity extends AppCompatActivity {
 
-    ImageView DeN, remedios, consul,infor;
+    ImageView DeN, remedios, consul,infor, _logout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +21,7 @@ public class HomeActivity extends AppCompatActivity {
         remedios = findViewById(R.id.btn_remedios);
         consul = findViewById(R.id.consulta);
         infor = findViewById(R.id.informacoes);
+        _logout = findViewById(R.id.logout);
 
         infor.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,6 +51,15 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), ConsultaActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        _logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(HomeActivity.this, "Logout Succefully", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
                 startActivity(intent);
             }
         });
