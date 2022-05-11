@@ -33,7 +33,7 @@ public class HomeActivity extends AppCompatActivity {
         DeN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), Dieta_NutricaoActivity.class);
+                Intent intent = new Intent(getApplicationContext(), DENActivity.class);
                 startActivity(intent);
             }
         });
