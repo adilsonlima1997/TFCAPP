@@ -19,7 +19,7 @@
             android:layout_height="100dp"
             android:src="@drawable/logo"
             android:layout_gravity="right"
-            android:layout_marginTop="-170dp"
+            android:layout_marginTop="-165dp"
             android:layout_marginRight="30dp"/>
 
         <TextView
@@ -56,21 +56,6 @@
             android:background="@drawable/edit"
             android:padding="20dp"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="100dp"
-            android:text="Tipo de Usuário"
-            android:textStyle="bold"
-            android:textColor="@color/black"/>
-
-        <Spinner
-            android:id="@+id/spinner"
-            android:layout_marginTop="10dp"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="50dp"
-            />
         <Button
             android:id="@+id/btn_login"
             android:layout_width="90dp"
