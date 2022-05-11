@@ -1,9 +1,11 @@
 package com.example.farmacia_v1;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -37,6 +39,13 @@ public class CUstomerAdapter extends RecyclerView.Adapter<CUstomerAdapter.MyView
         holder.remedio_nome_txt.setText(String.valueOf(remedio_nome.get(position)));
         holder.remedio_quantidade_txt.setText(String.valueOf(remedio_quantidade.get(position)));
         holder.remedio_descricao_txt.setText(String.valueOf(remedio_descricao.get(position)));
+        holder.update.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context, UpdateActivity.class);
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -48,12 +57,14 @@ public class CUstomerAdapter extends RecyclerView.Adapter<CUstomerAdapter.MyView
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
         TextView remedio_id_txt, remedio_nome_txt, remedio_quantidade_txt, remedio_descricao_txt;
+        Button update;
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             remedio_id_txt = itemView.findViewById(R.id.id_remedio);
             remedio_nome_txt = itemView.findViewById(R.id.nome_remedio);
             remedio_quantidade_txt = itemView.findViewById(R.id.quan_remedio);
             remedio_descricao_txt = itemView.findViewById(R.id.des_remedio);
+            update = itemView.findViewById(R.id.update_btn);
         }
     }
 }
