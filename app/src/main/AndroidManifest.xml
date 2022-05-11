@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Farmacia_V1">
         <activity
+            android:name=".Dieta_NutricaoActivity"
+            android:exported="false" />
+        <activity
             android:name=".UserActivity"
             android:exported="false" />
         <activity
