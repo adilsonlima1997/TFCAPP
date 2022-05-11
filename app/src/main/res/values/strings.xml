@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Farmacia_V1</string>
+    <string-array name="usertype">
+        <item>User</item>
+        <item>Admin</item>
+    </string-array>
+</resources>
