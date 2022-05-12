@@ -13,7 +13,6 @@
         android:layout_height="50dp"
         android:layout_gravity="center"
         android:src="@drawable/icons8_comprimidos"
-        app:layout_constraintBottom_toTopOf="@+id/input_nome_remedio"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -77,7 +76,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
-        android:text="Adicionar Rémedios"
+        android:text="Editar Rémedios"
         android:textColor="@color/black"
         android:textSize="20dp"
         android:textStyle="bold"
