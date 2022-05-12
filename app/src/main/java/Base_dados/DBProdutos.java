@@ -9,6 +9,8 @@ import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 
+import java.util.Queue;
+
 public class DBProdutos extends SQLiteOpenHelper {
 
     private Context context;
@@ -68,5 +70,20 @@ public class DBProdutos extends SQLiteOpenHelper {
             cursor = db.rawQuery(query, null);
         }
         return cursor;
+    }
+
+    public void updateData(String row_id, String nome, String quantid, String descri){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+        cv.put(COLUMN_NOME, nome);
+        cv.put(COLUMN_QUANTIDADE, quantid);
+        cv.put(COLUMN_DESCRICAO, descri);
+
+        long result = db.update(TABLE_NAME, cv, "_id=?", new String[]{row_id});
+        if (result == -1){
+            Toast.makeText(context, "Failed to Update!", Toast.LENGTH_SHORT).show();
+        }else{
+            Toast.makeText(context, "Successfully Updated!", Toast.LENGTH_SHORT).show();
+        }
     }
 }

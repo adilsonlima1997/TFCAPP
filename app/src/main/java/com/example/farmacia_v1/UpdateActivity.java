@@ -8,6 +8,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import Base_dados.DBProdutos;
+
 public class UpdateActivity extends AppCompatActivity {
 
     EditText nome_remedio_input, quant_remedio_input, desc_remedio_input;
@@ -24,13 +26,21 @@ public class UpdateActivity extends AppCompatActivity {
         desc_remedio_input = findViewById(R.id.descricao_remedio2);
         btn_update = findViewById(R.id.update_btn);
 
+        //first we call this
+        getAnsSetIntentData();
+
         btn_update.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                //And only then we call this
+                DBProdutos myDB = new DBProdutos(UpdateActivity.this);
+                nome = nome_remedio_input.getText().toString().trim();
+                quant = quant_remedio_input.getText().toString().trim();
+                desc = desc_remedio_input.getText().toString().trim();
+                myDB.updateData(id,nome,quant,desc);
             }
         });
-        getAnsSetIntentData();
+
     }
         void getAnsSetIntentData(){
             if(getIntent().hasExtra("remedio_id") && getIntent().hasExtra("remedio_nome") &&

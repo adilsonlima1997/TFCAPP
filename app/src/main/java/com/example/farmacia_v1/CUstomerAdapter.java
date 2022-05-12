@@ -1,6 +1,7 @@
 package com.example.farmacia_v1;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -17,10 +18,12 @@ import java.util.ArrayList;
 
 public class CUstomerAdapter extends RecyclerView.Adapter<CUstomerAdapter.MyViewHolder> {
     private Context context;
+    Activity activity;
     private ArrayList remedio_id, remedio_nome, remedio_quantidade, remedio_descricao;
 
 
-    CUstomerAdapter(Context context, ArrayList remedio_id, ArrayList remedio_nome,ArrayList remedio_quantidade,ArrayList remedio_descricao){
+    CUstomerAdapter(Activity activity, Context context, ArrayList remedio_id, ArrayList remedio_nome,ArrayList remedio_quantidade,ArrayList remedio_descricao){
+        this.activity = activity;
         this.context = context;
         this.remedio_id = remedio_id;
         this.remedio_nome = remedio_nome;
@@ -50,7 +53,7 @@ public class CUstomerAdapter extends RecyclerView.Adapter<CUstomerAdapter.MyView
                 intent.putExtra("remedio_nome", String.valueOf(remedio_nome.get(position)));
                 intent.putExtra("remedio_quantidade", String.valueOf(remedio_quantidade.get(position)));
                 intent.putExtra("remedio_descricao", String.valueOf(remedio_descricao.get(position)));
-                context.startActivity(intent);
+                activity.startActivityForResult(intent, 1);
             }
         });
     }
