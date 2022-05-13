@@ -31,6 +31,7 @@ public class Add_Remedios_Activity extends AppCompatActivity {
                 dbRemedios.addRemedios(n_remedio.getText().toString().trim(),
                             Integer.valueOf(quant_remedio.getText().toString().trim()),
                             descr_remedio.getText().toString().trim());
+                finish();
             }
         });
     }
