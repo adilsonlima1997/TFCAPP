@@ -1,7 +1,9 @@
 package com.example.farmacia_v1;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -13,7 +15,7 @@ import Base_dados.DBProdutos;
 public class UpdateActivity extends AppCompatActivity {
 
     EditText nome_remedio_input, quant_remedio_input, desc_remedio_input;
-    Button btn_update;
+    Button btn_update, btn_delete;
     String id, nome, quant, desc;
 
     @Override
@@ -25,6 +27,7 @@ public class UpdateActivity extends AppCompatActivity {
         quant_remedio_input = findViewById(R.id.quantidade_remedio2);
         desc_remedio_input = findViewById(R.id.descricao_remedio2);
         btn_update = findViewById(R.id.update_btn);
+        btn_delete = findViewById(R.id.delete_btn);
 
         //first we call this
         getAnsSetIntentData();
@@ -38,6 +41,13 @@ public class UpdateActivity extends AppCompatActivity {
                 quant = quant_remedio_input.getText().toString().trim();
                 desc = desc_remedio_input.getText().toString().trim();
                 myDB.updateData(id,nome,quant,desc);
+            }
+        });
+
+        btn_delete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+               confirmDialog();
             }
         });
 
@@ -58,5 +68,26 @@ public class UpdateActivity extends AppCompatActivity {
             }else{
                 Toast.makeText(this, "No Data.", Toast.LENGTH_SHORT).show();
             }
+        }
+
+        void confirmDialog(){
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setTitle("Apagar " + nome + " ?");
+            builder.setMessage("Desejas apagar " + nome + " ?");
+            builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+                    DBProdutos myDB = new DBProdutos(UpdateActivity.this);
+                    myDB.deleteOneRow(id);
+                    finish();
+                }
+            });
+            builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+
+                }
+            });
+            builder.create().show();
         }
     }

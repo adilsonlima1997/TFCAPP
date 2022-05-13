@@ -86,4 +86,14 @@ public class DBProdutos extends SQLiteOpenHelper {
             Toast.makeText(context, "Successfully Updated!", Toast.LENGTH_SHORT).show();
         }
     }
+
+    public void deleteOneRow(String row_id){
+        SQLiteDatabase db = this.getWritableDatabase();
+        long result = db.delete(TABLE_NAME, "_id=?", new String[]{row_id});
+        if (result == -1){
+            Toast.makeText(context, "Falha em Apagar", Toast.LENGTH_SHORT).show();
+        }else{
+            Toast.makeText(context, "Apagado com Sucesso", Toast.LENGTH_SHORT).show();
+        }
+    }
 }
