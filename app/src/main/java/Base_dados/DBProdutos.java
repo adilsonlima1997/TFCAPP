@@ -96,4 +96,9 @@ public class DBProdutos extends SQLiteOpenHelper {
             Toast.makeText(context, "Apagado com Sucesso", Toast.LENGTH_SHORT).show();
         }
     }
+
+    public void deleteAllData(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.execSQL("DELETE FROM " + TABLE_NAME);
+    }
 }
