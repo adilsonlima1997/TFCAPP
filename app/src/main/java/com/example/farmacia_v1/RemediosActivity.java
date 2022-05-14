@@ -15,6 +15,8 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -26,6 +28,8 @@ import Base_dados.DBProdutos;
 public class RemediosActivity extends AppCompatActivity {
 
     RecyclerView recView;
+    ImageView empty;
+    TextView no_data;
     FloatingActionButton btn_add_remedios;
     DBProdutos dbProdutos;
     ArrayList<String> remedio_id, remedio_nome, remedio_quantidade, remedio_descricao;
@@ -37,6 +41,8 @@ public class RemediosActivity extends AppCompatActivity {
 
         recView = findViewById(R.id.recyclerview);
         btn_add_remedios = findViewById(R.id.add_button);
+        empty = findViewById(R.id.empty_box);
+        no_data = findViewById(R.id.textView5);
 
         btn_add_remedios.setOnClickListener(new View.OnClickListener() {
             @Override
