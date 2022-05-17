@@ -2,6 +2,7 @@ package com.example.farmacia_v1;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -31,6 +32,9 @@ public class Add_Remedios_Activity extends AppCompatActivity {
                 dbRemedios.addRemedios(n_remedio.getText().toString().trim(),
                             Integer.valueOf(quant_remedio.getText().toString().trim()),
                             descr_remedio.getText().toString().trim());
+                //Refresh the recycleview
+                Intent intent = new Intent(Add_Remedios_Activity.this,RemediosActivity.class);
+                startActivity(intent);
                 finish();
             }
         });

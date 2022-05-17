@@ -42,7 +42,7 @@ public class RemediosActivity extends AppCompatActivity {
         recView = findViewById(R.id.recyclerview);
         btn_add_remedios = findViewById(R.id.add_button);
         empty = findViewById(R.id.empty_box);
-        no_data = findViewById(R.id.textView5);
+        no_data = findViewById(R.id.no_data);
 
         btn_add_remedios.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -77,7 +77,8 @@ public class RemediosActivity extends AppCompatActivity {
         Cursor cursor = dbProdutos.readAllData();
 
         if (cursor.getCount() == 0){
-            Toast.makeText(this, "Nenhum Dado para mostrar", Toast.LENGTH_SHORT).show();
+            empty.setVisibility(View.VISIBLE);
+            no_data.setVisibility(View.VISIBLE);
         }else{
             while(cursor.moveToNext()){
                 remedio_id.add(cursor.getString(0));
@@ -85,6 +86,8 @@ public class RemediosActivity extends AppCompatActivity {
                 remedio_quantidade.add(cursor.getString(2));
                 remedio_descricao.add(cursor.getString(3));
             }
+            empty.setVisibility(View.GONE);
+            no_data.setVisibility(View.GONE);
         }
     }
 
