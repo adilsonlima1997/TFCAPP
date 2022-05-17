@@ -7,6 +7,8 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -20,6 +22,7 @@ public class CUstomerAdapter extends RecyclerView.Adapter<CUstomerAdapter.MyView
     private Context context;
     Activity activity;
     private ArrayList remedio_id, remedio_nome, remedio_quantidade, remedio_descricao;
+    Animation translate_anim;
 
 
     CUstomerAdapter(Activity activity, Context context, ArrayList remedio_id, ArrayList remedio_nome,ArrayList remedio_quantidade,ArrayList remedio_descricao){
@@ -75,6 +78,9 @@ public class CUstomerAdapter extends RecyclerView.Adapter<CUstomerAdapter.MyView
             remedio_quantidade_txt = itemView.findViewById(R.id.quan_remedio);
             remedio_descricao_txt = itemView.findViewById(R.id.des_remedio);
             _mainLayout = itemView.findViewById(R.id.mainLayout);
+            //Animate Recyclerview
+            translate_anim = AnimationUtils.loadAnimation(context, R.anim.translate_anim);
+            _mainLayout.setAnimation(translate_anim);
         }
     }
 }
