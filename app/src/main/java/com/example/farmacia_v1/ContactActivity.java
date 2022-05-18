@@ -15,7 +15,7 @@ import android.widget.ImageView;
 public class ContactActivity extends AppCompatActivity {
 
     ImageView voltar, phone;
-    Button _phoneCall;
+    Button _phoneCall, _composeEmail;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,6 +24,7 @@ public class ContactActivity extends AppCompatActivity {
         voltar = findViewById(R.id.seta_voltar);
         phone = findViewById(R.id.telefone);
         _phoneCall = findViewById(R.id.button2);
+        _composeEmail = findViewById(R.id.compose_Email);
 
         voltar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -42,12 +43,20 @@ public class ContactActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
+        //função que lhe dá a possibilidade de fazer chamadas apartir do app
         phone.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(Intent.ACTION_DIAL);
                 intent.setData(Uri.parse("tel:5925806"));
+                startActivity(intent);
+            }
+        });
+
+        _composeEmail.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(),ComporEmailActivity.class);
                 startActivity(intent);
             }
         });

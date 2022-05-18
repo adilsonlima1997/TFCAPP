@@ -2,7 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.farmacia_v1">
 
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,6 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Farmacia_V1">
+        <activity
+            android:name=".ComporEmailActivity"
+            android:exported="false" />
         <activity
             android:name=".UpdateActivity"
             android:exported="false" />
