@@ -14,7 +14,7 @@ import android.widget.ImageView;
 
 public class ContactActivity extends AppCompatActivity {
 
-    ImageView voltar, phone;
+    ImageView voltar, phone, _mailBox;
     Button _phoneCall, _composeEmail;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +24,7 @@ public class ContactActivity extends AppCompatActivity {
         voltar = findViewById(R.id.seta_voltar);
         phone = findViewById(R.id.telefone);
         _phoneCall = findViewById(R.id.button2);
+        _mailBox = findViewById(R.id.mailBox);
         _composeEmail = findViewById(R.id.compose_Email);
 
         voltar.setOnClickListener(new View.OnClickListener() {
@@ -54,6 +55,14 @@ public class ContactActivity extends AppCompatActivity {
         });
 
         _composeEmail.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(),ComporEmailActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        _mailBox.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(),ComporEmailActivity.class);
