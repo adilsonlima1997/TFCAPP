@@ -8,8 +8,10 @@
         <entry key="app/src/main/res/drawable/headercolor.xml" value="0.192" />
         <entry key="app/src/main/res/drawable/ic_add.xml" value="0.156" />
         <entry key="app/src/main/res/drawable/ic_farmacyutico.xml" value="0.1765" />
+        <entry key="app/src/main/res/layout/activity_add_clinicas.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_add_farmacias.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_add_remedios.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_clinicas.xml" value="0.19010416666666666" />
         <entry key="app/src/main/res/layout/activity_compor_email.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_consulta.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_contact.xml" value="0.33" />
