@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Farmacia_V1">
         <activity
+            android:name=".Add_Farmacias_Activity"
+            android:exported="false" />
+        <activity
             android:name=".FarmaciasActivity"
             android:exported="false" />
         <activity
