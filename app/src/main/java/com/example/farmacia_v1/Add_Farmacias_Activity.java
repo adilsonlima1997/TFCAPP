@@ -31,7 +31,7 @@ public class Add_Farmacias_Activity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 DBFarmacias myDB = new DBFarmacias(Add_Farmacias_Activity.this);
-                myDB.addFarmacias1(name_farmacia.getText().toString().trim(), Local_farmacia.getText().toString());
+                myDB.addFarmacias1(name_farmacia.getText().toString().trim(), Local_farmacia.getText().toString().trim());
             }
         });
 
