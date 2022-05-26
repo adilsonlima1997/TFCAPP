@@ -2,6 +2,7 @@ package Base_dados;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.widget.Toast;
@@ -57,5 +58,17 @@ public class DBClinicas extends SQLiteOpenHelper {
         }else{
             Toast.makeText(context, "Dados inseridos com Sucesso", Toast.LENGTH_SHORT).show();
         }
+    }
+    //função que ira ler todos os dados da nossa base de dados
+    public Cursor readAllData2(){
+        String query = "SELECT * FROM " +TABLE_NAME;
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        Cursor cursor = null;
+        //verificar se temos algum dado na nossa tabela da base de dados
+        if (db != null){
+            cursor = db.rawQuery(query, null);
+        }
+        return cursor;
     }
 }

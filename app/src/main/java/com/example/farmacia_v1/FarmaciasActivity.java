@@ -1,18 +1,30 @@
 package com.example.farmacia_v1;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
+import java.util.ArrayList;
+
+import Base_dados.DBFarmacias;
 
 public class FarmaciasActivity extends AppCompatActivity {
 
     RecyclerView recyclerView;
     FloatingActionButton btn_add;
+
+    DBFarmacias myDB;
+    ArrayList<String> id_farmacia, farmacia_nome, farmacia_localizacao;
+    CustomerAdapterFarmacia customerAdapterFarmacia;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,5 +41,29 @@ public class FarmaciasActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        myDB = new DBFarmacias(FarmaciasActivity.this);
+        id_farmacia = new ArrayList<>();
+        farmacia_nome = new ArrayList<>();
+        farmacia_localizacao = new ArrayList<>();
+        displayData();
+
+        customerAdapterFarmacia = new CustomerAdapterFarmacia(FarmaciasActivity.this, id_farmacia, farmacia_nome, farmacia_localizacao);
+        recyclerView.setAdapter(customerAdapterFarmacia);
+        recyclerView.setLayoutManager(new LinearLayoutManager(FarmaciasActivity.this));
+    }
+
+    public void displayData(){
+        Cursor cursor = myDB.readAllData1();
+
+        if (cursor.getCount() == 0){
+            Toast.makeText(this, "No data", Toast.LENGTH_SHORT).show();
+        }else{
+            while(cursor.moveToNext()){
+                id_farmacia.add(cursor.getString(0));
+                farmacia_nome.add(cursor.getString(1));
+                farmacia_localizacao.add(cursor.getString(2));
+            }
+        }
     }
 }
