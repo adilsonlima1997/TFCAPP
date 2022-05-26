@@ -3,17 +3,13 @@ package com.example.farmacia_v1;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
-
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-
 import java.util.ArrayList;
-
 import Base_dados.DBClinicas;
 
 public class ClinicasActivity extends AppCompatActivity {
@@ -49,8 +45,6 @@ public class ClinicasActivity extends AppCompatActivity {
         customerAdapterClinica = new CustomerAdapterClinica(ClinicasActivity.this, id_clinica, nome_clinica, local_clinica,hora_clinica);
         recyclerView_1.setAdapter(customerAdapterClinica);
         recyclerView_1.setLayoutManager(new LinearLayoutManager(ClinicasActivity.this));
-
-
     }
 
     public void displayData() {
