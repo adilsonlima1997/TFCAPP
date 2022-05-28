@@ -41,7 +41,9 @@ public class ClinicasActivity extends AppCompatActivity {
         nome_clinica = new ArrayList<>();
         local_clinica = new ArrayList<>();
         hora_clinica = new ArrayList<>();
+
         displayData();
+
         customerAdapterClinica = new CustomerAdapterClinica(ClinicasActivity.this, id_clinica, nome_clinica, local_clinica,hora_clinica);
         recyclerView_1.setAdapter(customerAdapterClinica);
         recyclerView_1.setLayoutManager(new LinearLayoutManager(ClinicasActivity.this));

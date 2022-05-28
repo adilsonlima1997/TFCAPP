@@ -9,6 +9,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Farmacia_V1">
         <activity
+            android:name=".Update_ClinicaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Update_FarmaciaActivity"
+            android:exported="false" />
+        <activity
             android:name=".Add_clinicasActivity"
             android:exported="false" />
         <activity
