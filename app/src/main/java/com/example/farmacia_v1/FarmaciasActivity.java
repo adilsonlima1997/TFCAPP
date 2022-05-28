@@ -1,5 +1,6 @@
 package com.example.farmacia_v1;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -48,9 +49,18 @@ public class FarmaciasActivity extends AppCompatActivity {
         farmacia_localizacao = new ArrayList<>();
         displayData();
 
-        customerAdapterFarmacia = new CustomerAdapterFarmacia(FarmaciasActivity.this, id_farmacia, farmacia_nome, farmacia_localizacao);
+        customerAdapterFarmacia = new CustomerAdapterFarmacia(FarmaciasActivity.this, this, id_farmacia, farmacia_nome, farmacia_localizacao);
         recyclerView.setAdapter(customerAdapterFarmacia);
         recyclerView.setLayoutManager(new LinearLayoutManager(FarmaciasActivity.this));
+    }
+
+    //esta função faz um refresh na activity
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode == 1){
+            recreate();
+        }
     }
 
     public void displayData(){

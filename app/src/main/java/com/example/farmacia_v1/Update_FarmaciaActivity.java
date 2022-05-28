@@ -8,6 +8,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import Base_dados.DBClinicas;
+import Base_dados.DBFarmacias;
+
 public class Update_FarmaciaActivity extends AppCompatActivity {
 
     EditText input_farmacia_nome, input_farmacia_local;
@@ -29,6 +32,11 @@ public class Update_FarmaciaActivity extends AppCompatActivity {
         btn_update_farmacia.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //And only then we call this
+                DBFarmacias myDB = new DBFarmacias(Update_FarmaciaActivity.this);
+                nome_farmacia = input_farmacia_nome.getText().toString().trim();
+                localizacao_farmacia = input_farmacia_local.getText().toString().trim();
+                myDB.updateData1(id_farmacia,nome_farmacia,localizacao_farmacia);
 
             }
         });

@@ -1,5 +1,6 @@
 package com.example.farmacia_v1;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -44,9 +45,17 @@ public class ClinicasActivity extends AppCompatActivity {
 
         displayData();
 
-        customerAdapterClinica = new CustomerAdapterClinica(ClinicasActivity.this, id_clinica, nome_clinica, local_clinica,hora_clinica);
+        customerAdapterClinica = new CustomerAdapterClinica(ClinicasActivity.this, this, id_clinica, nome_clinica, local_clinica,hora_clinica);
         recyclerView_1.setAdapter(customerAdapterClinica);
         recyclerView_1.setLayoutManager(new LinearLayoutManager(ClinicasActivity.this));
+    }
+    //esta função faz um refresh na activity
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode == 1){
+            recreate();
+        }
     }
 
     public void displayData() {

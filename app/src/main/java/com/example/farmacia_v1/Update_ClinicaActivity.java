@@ -8,6 +8,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import Base_dados.DBClinicas;
+import Base_dados.DBProdutos;
+
 public class Update_ClinicaActivity extends AppCompatActivity {
 
     EditText input_clinica_nome, input_clinica_local, input_clinica_horario;
@@ -28,7 +31,12 @@ public class Update_ClinicaActivity extends AppCompatActivity {
         btn_update_clinica.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                //And only then we call this
+                DBClinicas myDB = new DBClinicas(Update_ClinicaActivity.this);
+                nome_clinica = input_clinica_nome.getText().toString().trim();
+                localizacao_clinica = input_clinica_local.getText().toString().trim();
+                horario_clinica = input_clinica_horario.getText().toString().trim();
+                myDB.updateDataClinica(id_clinica,nome_clinica,localizacao_clinica,horario_clinica);
             }
         });
     }

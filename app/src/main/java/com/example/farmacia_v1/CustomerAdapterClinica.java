@@ -1,6 +1,7 @@
 package com.example.farmacia_v1;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -18,8 +19,10 @@ public class CustomerAdapterClinica extends RecyclerView.Adapter<CustomerAdapter
 
     private Context context;
     private ArrayList clinica_id, clinica_nome, clinica_localizacao, clinica_hora;
+    Activity activity;
 
-    CustomerAdapterClinica(Context context,  ArrayList clinica_id,ArrayList clinica_nome, ArrayList clinica_localizacao, ArrayList clinica_hora){
+    CustomerAdapterClinica(Activity activity, Context context,  ArrayList clinica_id,ArrayList clinica_nome, ArrayList clinica_localizacao, ArrayList clinica_hora){
+        this.activity = activity;
         this.context = context;
         this.clinica_id = clinica_id;
         this.clinica_nome = clinica_nome;
@@ -49,7 +52,7 @@ public class CustomerAdapterClinica extends RecyclerView.Adapter<CustomerAdapter
                 intent.putExtra("clinica_nome", String.valueOf(clinica_nome.get(position)));
                 intent.putExtra("clinica_localizacao", String.valueOf(clinica_localizacao.get(position)));
                 intent.putExtra("clinica_hora", String.valueOf(clinica_hora.get(position)));
-                context.startActivity(intent);
+                activity.startActivityForResult(intent, 1);
             }
         });
 

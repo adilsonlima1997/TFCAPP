@@ -19,10 +19,12 @@ public class CustomerAdapterFarmacia extends RecyclerView.Adapter<CustomerAdapte
 
     private Context context;
     private ArrayList farmacia_id, farmacia_nome, farmacia_localizacao;
+    Activity activity;
 
 
 
-    CustomerAdapterFarmacia(Context context, ArrayList farnacia_id, ArrayList farmacia_nome,ArrayList farmacia_localizacao){
+    CustomerAdapterFarmacia(Activity activity, Context context, ArrayList farnacia_id, ArrayList farmacia_nome,ArrayList farmacia_localizacao){
+        this.activity= activity;
         this.context = context;
         this.farmacia_id = farnacia_id;
         this.farmacia_nome = farmacia_nome;
@@ -50,7 +52,7 @@ public class CustomerAdapterFarmacia extends RecyclerView.Adapter<CustomerAdapte
                 intent.putExtra("farmacia_id", String.valueOf(farmacia_id.get(position)));
                 intent.putExtra("farmacia_nome", String.valueOf(farmacia_nome.get(position)));
                 intent.putExtra("farmacia_localizacao", String.valueOf(farmacia_localizacao.get(position)));
-                context.startActivity(intent);
+                activity.startActivityForResult(intent, 1);
             }
         });
 

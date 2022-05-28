@@ -71,4 +71,22 @@ public class DBClinicas extends SQLiteOpenHelper {
         }
         return cursor;
     }
+
+
+    public void updateDataClinica(String row_id, String nome_clinica, String local_clinica, String horario_clinica){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+        cv.put(COLUMN_CLINICA, nome_clinica);
+        cv.put(COLUMN_LOCALIZACAO, local_clinica);
+        cv.put(COLUMN_HORARIO, horario_clinica);
+
+        long result = db.update(TABLE_NAME, cv, "_id=?", new String[]{row_id});
+        //se não tiver dados envia uma mensagem de erro
+        if (result == -1){
+            Toast.makeText(context, "Failed to Update!", Toast.LENGTH_SHORT).show();
+        }else{
+            Toast.makeText(context, "Successfully Updated!", Toast.LENGTH_SHORT).show();
+        }
+
+    }
 }
