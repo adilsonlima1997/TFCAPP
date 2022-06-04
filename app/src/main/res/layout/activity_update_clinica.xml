@@ -73,6 +73,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/input_horario_clinica" />
 
+    <Button
+        android:id="@+id/delete_clinica_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/edit_btn"
+        android:text="Apagar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/save_clinica_btn"
+        app:layout_constraintHorizontal_bias="0.443"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/input_horario_clinica" />
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"

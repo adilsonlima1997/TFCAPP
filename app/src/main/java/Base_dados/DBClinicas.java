@@ -9,6 +9,9 @@ import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class DBClinicas extends SQLiteOpenHelper {
 
     private Context context;
@@ -58,6 +61,7 @@ public class DBClinicas extends SQLiteOpenHelper {
         }else{
             Toast.makeText(context, "Dados inseridos com Sucesso", Toast.LENGTH_SHORT).show();
         }
+        db.close();
     }
     //função que ira ler todos os dados da nossa base de dados
     public Cursor readAllData2(){
@@ -89,4 +93,20 @@ public class DBClinicas extends SQLiteOpenHelper {
         }
 
     }
+
+    public void deleteOneRow2(String row_id){
+        SQLiteDatabase db = this.getWritableDatabase();
+        long result = db.delete(TABLE_NAME, "_id=?", new String[]{row_id});
+        if (result == -1){
+            Toast.makeText(context, "Falha em Apagar", Toast.LENGTH_SHORT).show();
+        }else{
+            Toast.makeText(context, "Apagado com Sucesso", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    public void deleteAllData2(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.execSQL("DELETE FROM " + TABLE_NAME);
+    }
+
 }

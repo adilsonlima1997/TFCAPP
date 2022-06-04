@@ -37,6 +37,7 @@ public class LoginActivity extends AppCompatActivity {
                 String user1 = user.getText().toString();
                 String pass1 = pass.getText().toString();
 
+
                 if (TextUtils.isEmpty(user1) || TextUtils.isEmpty(pass1))
                     Toast.makeText(LoginActivity.this, "Preencha todos os campos", Toast.LENGTH_SHORT).show();
                 else{
@@ -45,6 +46,7 @@ public class LoginActivity extends AppCompatActivity {
                         Toast.makeText(LoginActivity.this, "Login com sucesso", Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
                         startActivity(intent);
+                        finish();
                     }else{
                         Toast.makeText(LoginActivity.this, "Falha em Logar", Toast.LENGTH_SHORT).show();
                     }
@@ -57,6 +59,7 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(getApplication(), RegistrarActivity.class);
                 startActivity(intent);
+
             }
         });
     }

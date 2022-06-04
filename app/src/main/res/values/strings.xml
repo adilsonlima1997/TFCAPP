@@ -1,3 +1,9 @@
 <resources>
-    <string name="app_name">Farmacia_V1</string>
+    <string name="app_name">Saude Na Mon</string>
+    <string-array name="dados_spinner">
+        <item>Clínica X-eco</item>
+        <item>Clini-Tur</item>
+        <item>Clinica Mais Vida</item>
+        <item>Clinica Gonçalves</item>
+    </string-array>
 </resources>

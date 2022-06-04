@@ -8,11 +8,11 @@
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="74dp"
-        android:layout_height="79dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         android:layout_marginTop="24dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.132"
+        app:layout_constraintHorizontal_bias="0.112"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/stetoskop_doctor_hospita_nurse_clinic_icon" />
@@ -22,13 +22,13 @@
         android:layout_width="48dp"
         android:layout_height="50dp"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="108dp"
+        android:layout_marginTop="76dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/left_return_arrow_icon" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName5"
+        android:id="@+id/NIF"
         android:layout_width="326dp"
         android:layout_height="30dp"
         android:layout_marginTop="16dp"
@@ -46,7 +46,8 @@
         android:layout_width="227dp"
         android:layout_height="163dp"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="50dp"
         android:background="@drawable/edit"
         android:ems="10"
         android:gravity="start|top"
@@ -54,13 +55,13 @@
         android:inputType="textMultiLine"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/enviar"
-        app:layout_constraintHorizontal_bias="0.161"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName7"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/spinner"
+        app:layout_constraintVertical_bias="1.0" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/nome_completo"
         android:layout_width="326dp"
         android:layout_height="30dp"
         android:layout_marginTop="4dp"
@@ -85,10 +86,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.482"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName3" />
+        app:layout_constraintTop_toBottomOf="@+id/E_mail" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName2"
+        android:id="@+id/n_telefone"
         android:layout_width="326dp"
         android:layout_height="30dp"
         android:layout_marginTop="16dp"
@@ -99,10 +100,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.47"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+        app:layout_constraintTop_toBottomOf="@+id/nome_completo" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName6"
+        android:id="@+id/cni_bi"
         android:layout_width="326dp"
         android:layout_height="30dp"
         android:layout_marginTop="16dp"
@@ -113,34 +114,21 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.482"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName5" />
-
-    <Spinner
-        android:id="@+id/editTextTextPersonName7"
-        android:layout_width="326dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/edit"
-        android:ems="10"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.482"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName6" />
+        app:layout_constraintTop_toBottomOf="@+id/NIF" />
 
     <Button
         android:id="@+id/enviar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="80dp"
-        android:text="ENVIAR"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="48dp"
         android:background="@drawable/edit_btn"
+        android:text="ENVIAR"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName3"
+        android:id="@+id/E_mail"
         android:layout_width="326dp"
         android:layout_height="30dp"
         android:layout_marginTop="16dp"
@@ -151,21 +139,30 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.482"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2" />
+        app:layout_constraintTop_toBottomOf="@+id/n_telefone" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="248dp"
         android:layout_height="21dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="24dp"
+        android:gravity="center"
         android:text="MARCAÇÃO DE CONSULTA"
         android:textColor="@color/black"
         android:textStyle="bold"
-        android:gravity="center"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.954"
         app:layout_constraintStart_toEndOf="@+id/imageView2"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="326dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="16dp"
+        android:entries="@array/dados_spinner"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cni_bi" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

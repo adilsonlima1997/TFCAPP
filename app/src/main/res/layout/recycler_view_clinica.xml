@@ -35,7 +35,7 @@
                 android:id="@+id/nome_CLINICA"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="76dp"
+                android:layout_marginStart="16dp"
                 android:text="Nome da Clínica"
                 android:textColor="@color/black"
                 android:textSize="15sp"
@@ -51,6 +51,7 @@
                 android:id="@+id/Localizacao_Clinica"
                 android:layout_width="81dp"
                 android:layout_height="26dp"
+                android:layout_marginStart="16dp"
                 android:layout_marginEnd="220dp"
                 android:text="Localização"
                 android:textColor="@color/black"
@@ -58,6 +59,8 @@
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="@+id/id_CLINICA"
                 app:layout_constraintEnd_toEndOf="@+id/id_CLINICA"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/nome_CLINICA"
                 app:layout_constraintTop_toBottomOf="@+id/nome_CLINICA"
                 app:layout_constraintVertical_bias="0.0" />
 
@@ -65,15 +68,15 @@
                 android:id="@+id/horas"
                 android:layout_width="126dp"
                 android:layout_height="37dp"
+                android:layout_marginStart="-50dp"
                 android:text="Horário de funcionamento"
-                android:textStyle="bold"
                 android:textColor="@color/black"
+                android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/id_CLINICA"
                 app:layout_constraintHorizontal_bias="0.513"
                 app:layout_constraintStart_toEndOf="@+id/nome_CLINICA"
-                app:layout_constraintTop_toTopOf="@+id/id_CLINICA"
-                app:layout_constraintVertical_bias="0.4" />
+                app:layout_constraintTop_toTopOf="@+id/id_CLINICA" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>

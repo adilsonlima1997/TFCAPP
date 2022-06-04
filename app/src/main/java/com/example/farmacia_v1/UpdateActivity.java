@@ -1,5 +1,6 @@
 package com.example.farmacia_v1;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -31,6 +32,12 @@ public class UpdateActivity extends AppCompatActivity {
 
         //first we call this
         getAnsSetIntentData();
+        //change our ation bar name
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.setTitle(nome);
+        }
+
 
         btn_update.setOnClickListener(new View.OnClickListener() {
             @Override

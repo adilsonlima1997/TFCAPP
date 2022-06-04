@@ -3,6 +3,7 @@ package com.example.farmacia_v1;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -32,6 +33,10 @@ public class Add_Farmacias_Activity extends AppCompatActivity {
             public void onClick(View view) {
                 DBFarmacias myDB = new DBFarmacias(Add_Farmacias_Activity.this);
                 myDB.addFarmacias1(name_farmacia.getText().toString().trim(), Local_farmacia.getText().toString().trim());
+                //Refresh the recycleview
+                Intent intent = new Intent(Add_Farmacias_Activity.this,FarmaciasActivity.class);
+                startActivity(intent);
+                finish();
             }
         });
 

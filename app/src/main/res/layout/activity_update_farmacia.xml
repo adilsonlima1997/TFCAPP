@@ -48,6 +48,20 @@
         app:layout_constraintTop_toBottomOf="@+id/input_nome_farmacia" />
 
     <Button
+        android:id="@+id/delete_farmacia_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/edit_btn"
+        android:text="Apagar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/save_farmacia_btn"
+        app:layout_constraintHorizontal_bias="0.288"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/input_localizacao_farmacia"
+        app:layout_constraintVertical_bias="0.142" />
+
+
+    <Button
         android:id="@+id/save_farmacia_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -55,10 +69,10 @@
         android:text="Atualizar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.883"
+        app:layout_constraintHorizontal_bias="0.856"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/input_localizacao_farmacia"
-        app:layout_constraintVertical_bias="0.445" />
+        app:layout_constraintVertical_bias="0.132" />
 
     <TextView
         android:id="@+id/textView"

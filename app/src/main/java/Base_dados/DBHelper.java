@@ -36,6 +36,7 @@ public class DBHelper extends SQLiteOpenHelper {
         values.put("user_name", user);
         values.put("pass_word", password);
 
+
         long result = db.insert("users", null, values);
         if (result == -1)return false;
         else

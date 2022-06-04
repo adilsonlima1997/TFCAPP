@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -73,7 +74,6 @@ public class CustomerAdapterFarmacia extends RecyclerView.Adapter<CustomerAdapte
             farmacia_nome_txt = itemView.findViewById(R.id.nome_FARMACIA);
             localização_farmacia_txt = itemView.findViewById(R.id.Localizacao_Farmacia);
             _mainLayoutFarmacia = itemView.findViewById(R.id.mainLayoutFarmacia);
-
         }
     }
 }

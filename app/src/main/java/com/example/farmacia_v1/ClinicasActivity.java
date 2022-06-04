@@ -1,17 +1,25 @@
 package com.example.farmacia_v1;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import java.util.ArrayList;
 import Base_dados.DBClinicas;
+import Base_dados.DBFarmacias;
 
 public class ClinicasActivity extends AppCompatActivity {
 
@@ -71,5 +79,46 @@ public class ClinicasActivity extends AppCompatActivity {
                 hora_clinica.add(cursor.getString(3));
             }
         }
+    }
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.my_menu, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if(item.getItemId() == R.id.delete_all){
+            confirmDialog();
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    public void confirmDialog(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Apagar Tudo!");
+        builder.setMessage("Desejas apagar todos os produtos ?");
+        builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                DBClinicas myDB = new DBClinicas(ClinicasActivity.this);
+                myDB.deleteAllData2();
+                //Refresh the recycleview
+                Intent intent = new Intent(ClinicasActivity.this,ClinicasActivity.class);
+                startActivity(intent);
+                finish();
+
+            }
+        });
+        builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+
+            }
+        });
+        builder.create().show();
     }
 }
