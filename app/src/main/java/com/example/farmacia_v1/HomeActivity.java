@@ -10,7 +10,7 @@ import android.widget.Toast;
 
 public class HomeActivity extends AppCompatActivity {
 
-    ImageView DeN, remedios, consul,infor, _logout,farmacia,_clinica;
+    ImageView DeN, remedios, consul,infor, _logout,farmacia,_clinica, maps_farmacias, maps_clinicas;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +24,18 @@ public class HomeActivity extends AppCompatActivity {
         _logout = findViewById(R.id.logout);
         farmacia = findViewById(R.id.btn_farmacias);
         _clinica = findViewById(R.id.clinica);
+        maps_farmacias = findViewById(R.id.maps_farmacia);
+        maps_clinicas = findViewById(R.id.maps_clinicas);
+
+
+        maps_farmacias.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), MapsFarmaciasActivity.class);
+                startActivity(intent);
+            }
+        });
+
 
         infor.setOnClickListener(new View.OnClickListener() {
             @Override

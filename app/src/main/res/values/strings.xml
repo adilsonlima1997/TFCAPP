@@ -6,4 +6,5 @@
         <item>Clinica Mais Vida</item>
         <item>Clinica Gonçalves</item>
     </string-array>
+    <string name="title_activity_maps_farmacias">MapsFarmaciasActivity</string>
 </resources>
