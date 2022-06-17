@@ -3,6 +3,7 @@ package com.example.farmacia_v1;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -26,15 +27,6 @@ public class HomeActivity extends AppCompatActivity {
         _clinica = findViewById(R.id.clinica);
         maps_farmacias = findViewById(R.id.maps_farmacia);
         maps_clinicas = findViewById(R.id.maps_clinicas);
-
-
-        maps_farmacias.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), MapsFarmaciasActivity.class);
-                startActivity(intent);
-            }
-        });
 
 
         infor.setOnClickListener(new View.OnClickListener() {
@@ -100,5 +92,27 @@ public class HomeActivity extends AppCompatActivity {
 
             }
         });
+
+        maps_farmacias.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Uri gmmIntentUri = Uri.parse("geo:0,0?q=pharmacy");
+                Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
+                mapIntent.setPackage("com.google.android.apps.maps");
+                startActivity(mapIntent);
+            }
+        });
+
+        maps_clinicas.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Uri gmmIntentUri = Uri.parse("geo:0,0?q=clinic");
+                Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
+                mapIntent.setPackage("com.google.android.apps.maps");
+                startActivity(mapIntent);
+            }
+        });
+
+
     }
 }

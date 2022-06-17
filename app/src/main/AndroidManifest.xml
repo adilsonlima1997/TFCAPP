@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/logo"
@@ -23,12 +25,7 @@
         -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyAlJKq4wJpnmPqIBZJSc-xYa4-jUGcnKlw" />
-
-        <activity
-            android:name=".MapsFarmaciasActivity"
-            android:exported="false"
-            android:label="@string/title_activity_maps_farmacias" />
+            android:value="@string/google_map_key" />
 
         <activity
             android:name=".Update_ClinicaActivity"

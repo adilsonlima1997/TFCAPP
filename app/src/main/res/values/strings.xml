@@ -7,4 +7,5 @@
         <item>Clinica Gonçalves</item>
     </string-array>
     <string name="title_activity_maps_farmacias">MapsFarmaciasActivity</string>
+    <string name="google_map_key">AIzaSyAlJKq4wJpnmPqIBZJSc-xYa4-jUGcnKlw</string>
 </resources>
