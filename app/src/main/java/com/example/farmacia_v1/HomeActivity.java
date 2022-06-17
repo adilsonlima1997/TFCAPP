@@ -11,7 +11,7 @@ import android.widget.Toast;
 
 public class HomeActivity extends AppCompatActivity {
 
-    ImageView DeN, remedios, consul,infor, _logout,farmacia,_clinica, maps_farmacias, maps_clinicas;
+    ImageView DeN, remedios, consul,infor, _logout,farmacia,_clinica, maps_farmacias, maps_clinicas, _estoque;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +27,7 @@ public class HomeActivity extends AppCompatActivity {
         _clinica = findViewById(R.id.clinica);
         maps_farmacias = findViewById(R.id.maps_farmacia);
         maps_clinicas = findViewById(R.id.maps_clinicas);
+        _estoque = findViewById(R.id.estoque);
 
 
         infor.setOnClickListener(new View.OnClickListener() {
@@ -90,6 +91,14 @@ public class HomeActivity extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(), ClinicasActivity.class);
                 startActivity(intent);
 
+            }
+        });
+
+        _estoque.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), EstoqueActivity.class);
+                startActivity(intent);
             }
         });
 
