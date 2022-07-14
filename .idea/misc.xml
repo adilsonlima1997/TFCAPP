@@ -11,6 +11,7 @@
         <entry key="app/src/main/res/layout/activity_add_clinicas.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_add_farmacias.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_add_remedios.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_clinic.xml" value="0.19519927536231885" />
         <entry key="app/src/main/res/layout/activity_clinicas.xml" value="0.19010416666666666" />
         <entry key="app/src/main/res/layout/activity_compor_email.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_consulta.xml" value="0.33" />
@@ -18,6 +19,7 @@
         <entry key="app/src/main/res/layout/activity_denactivity.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_dieta_nutricao.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_estoque.xml" value="0.19010416666666666" />
+        <entry key="app/src/main/res/layout/activity_farm.xml" value="0.19519927536231885" />
         <entry key="app/src/main/res/layout/activity_farmacias.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_home.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_info.xml" value="0.33" />
@@ -25,6 +27,7 @@
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.2712820512820513" />
         <entry key="app/src/main/res/layout/activity_map.xml" value="0.19010416666666666" />
         <entry key="app/src/main/res/layout/activity_maps_farmacias.xml" value="0.2755208333333333" />
+        <entry key="app/src/main/res/layout/activity_modulos.xml" value="0.2755208333333333" />
         <entry key="app/src/main/res/layout/activity_registrar.xml" value="0.2755208333333333" />
         <entry key="app/src/main/res/layout/activity_remedios.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_update.xml" value="0.25" />
@@ -44,6 +47,7 @@
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.156" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_person.xml" value="0.156" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_person_round.xml" value="0.156" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_user_round.xml" value="0.1715" />
       </map>
     </option>
   </component>
