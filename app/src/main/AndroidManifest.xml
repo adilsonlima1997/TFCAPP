@@ -63,9 +63,6 @@
             android:exported="false"
             android:parentActivityName=".RemediosActivity" />
         <activity
-            android:name=".DENActivity"
-            android:exported="false" />
-        <activity
             android:name=".ContactActivity"
             android:exported="false" />
         <activity
